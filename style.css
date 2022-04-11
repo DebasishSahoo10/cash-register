@@ -1,0 +1,27 @@
+body {
+    margin: auto;
+    text-align: center;
+    max-width: 60%;
+}
+
+#change-table {
+    margin: auto;
+}
+
+#bill-amount {
+    display: block;
+    margin: auto;
+}
+
+#cash-amount {
+    display: block;
+    margin: auto;
+}
+
+.container-three {
+    display: none;
+}
+
+.container-four {
+    display: none;
+}
