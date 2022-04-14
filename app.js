@@ -10,28 +10,31 @@ var changeNumbers = document.querySelectorAll('.changeNotes')
 
 function checkInput () {
     if (input.value > 0) {
-        cashContainer.style.display='block'
-        changeContainer.style.display='block'
-        errorMessage.style.display='none'
+        cashContainer.style.display='block';
+        changeContainer.style.display='block';
+        errorMessage.style.display='none';
     } else {
-        error("Please input a valid Bill Amount")
+        error("Please input a valid Bill Amount");
     } 
-}
+};
 
 function calculate () {
+    var amountToBeReturned = cashInput.value - input.value;
     if (cashInput.value >= input.value) {
-        errorMessage.style.display='none'
+        errorMessage.style.display='none';
+        console.log(amountToBeReturned);
     } else {
-        errorMessage.style.display='block'
-        error("Please input valid Cash Amount")
+        errorMessage.style.display='block';
+        error("Please input valid Cash Amount");
     }
-}
+};
+
 
 
 function error(message) {
-    errorMessage.innerText = message
-}
+    errorMessage.innerText = message;
+};
 
 
-next.addEventListener("click", checkInput)
-submit.addEventListener("click", calculate)
+next.addEventListener("click", checkInput);
+submit.addEventListener("click", calculate);
