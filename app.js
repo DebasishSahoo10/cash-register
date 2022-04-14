@@ -8,6 +8,9 @@ var changeContainer = document.querySelector('.container-four')
 var errorMessage = document.querySelector('#error')
 var changeNumbers = document.querySelectorAll('.changeNotes')
 
+
+
+
 function checkInput () {
     if (input.value > 0) {
         cashContainer.style.display='block';
@@ -20,7 +23,7 @@ function checkInput () {
 
 function calculate () {
     var amountToBeReturned = cashInput.value - input.value;
-    if (cashInput.value >= input.value) {
+    if (Number(cashInput.value) >= Number(input.value)) {
         errorMessage.style.display='none';
         console.log(amountToBeReturned);
     } else {
