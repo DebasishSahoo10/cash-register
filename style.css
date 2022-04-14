@@ -1,21 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --primary-color: white;
+    --secondary-color: #191621;
+    --third-color: #43434c;
+    --fourth-color: #56A689;
+    --fifth-color: #595962;
+}
+
 body {
+    font-family: 'Lato', sans-serif;
     margin: auto;
     text-align: center;
     max-width: 60%;
+    background-color: var(--primary-color);
+    font-size: larger;
 }
 
-#change-table {
+.heading {
+    color: var(--secondary-color);
+}
+
+.description, #error {
+    color: var(--fifth-color);
+}
+
+label {
+    color: var(--secondary-color);
+}
+
+caption {
+    color: var(--secodary-color);
+    margin-bottom: 0.5rem;
+}
+
+
+#change-table, td, th {
     margin: auto;
+    border: 2px var(--fourth-color) solid;
+    color: var(--secondary-color);
+    border-collapse: collapse;
 }
 
-#bill-amount {
+td, th {
+    width: 0%;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+input {
     display: block;
     margin: auto;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 3px var(--fourth-color) solid;
+    border-radius: 0.5rem 0.5rem;
+    padding: 1rem;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: large;
+    margin-top: 0.5rem;
 }
 
-#cash-amount {
-    display: block;
-    margin: auto;
+button {
+    font-family: 'Lato', sans-serif;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--third-color);
+    border: 2px var(--third-color) solid;
+    border-radius: 0.5rem 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .container-three {
