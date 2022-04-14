@@ -1,35 +1,41 @@
-var input = document.querySelector('#bill-amount')
+var billInput = document.querySelector('#bill-amount')
 var next = document.querySelector('#next-button')
 var cashInput = document.querySelector('#cash-amount')
 var submit = document.querySelector('#submit-button')
-var table = document.querySelector('#change-table')
 var cashContainer = document.querySelector('.container-three')
-var changeContainer = document.querySelector('.container-four')
+var tableContainer = document.querySelector('.container-four')
 var errorMessage = document.querySelector('#error')
-var changeNumbers = document.querySelectorAll('.changeNotes')
+var noteNumbers = document.querySelectorAll('.changeNotes')
+var notesAvailable = [2000,500,100,20,10,5,1]
 
 
-
-
-function checkInput () {
-    if (input.value > 0) {
+function checkBillInput () {
+    if (billInput.value > 0) {
         cashContainer.style.display='block';
-        changeContainer.style.display='block';
+        tableContainer.style.display='block';
         errorMessage.style.display='none';
     } else {
         error("Please input a valid Bill Amount");
     } 
 };
 
-function calculate () {
-    var amountToBeReturned = cashInput.value - input.value;
-    if (Number(cashInput.value) >= Number(input.value)) {
+function checkCashAmount () {
+    if (Number(cashInput.value) >= Number(billInput.value)) {
         errorMessage.style.display='none';
-        console.log(amountToBeReturned);
     } else {
         errorMessage.style.display='block';
         error("Please input valid Cash Amount");
     }
+}
+
+function calculateNotes () {
+    var amountToBeReturned = cashInput.value - billInput.value;
+    for (let i = 0; i < notesAvailable.length; i++) {
+        var noOfNotes = Math.trunc(amountToBeReturned/notesAvailable[i]);
+        amountToBeReturned = amountToBeReturned % notesAvailable[i];
+        noteNumbers[i].innerText = noOfNotes;
+    };
+    
 };
 
 
@@ -39,5 +45,6 @@ function error(message) {
 };
 
 
-next.addEventListener("click", checkInput);
-submit.addEventListener("click", calculate);
+next.addEventListener("click", checkBillInput);
+submit.addEventListener("click", checkCashAmount);
+submit.addEventListener("click", calculateNotes);
