@@ -28,6 +28,7 @@ function checkCashAmount () {
     } else {
         errorMessage.style.display='block';
         error("Please input valid Cash Amount");
+        tableContainer.style.display='none';
     }
 }
 
