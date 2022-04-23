@@ -83,3 +83,9 @@ button {
 .container-four {
     display: none;
 }
+
+small {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--third-color);
+}
