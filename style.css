@@ -86,7 +86,10 @@ button {
 }
 
 small {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin: 1rem auto;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
     color: var(--third-color);
 }
