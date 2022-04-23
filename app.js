@@ -25,6 +25,7 @@ function checkBillInput () {
 function checkCashAmount () {
     if (Number(cashInput.value) >= Number(billInput.value)) {
         errorMessage.style.display='none';
+        tableContainer.style.display='block';
     } else {
         errorMessage.style.display='block';
         error("Please input valid Cash Amount");
