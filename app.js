@@ -16,7 +16,7 @@ function checkBillInput () {
         errorMessage.style.display='none';
     } else {
         errorMessage.style.display='block';
-        errorMessage.innerText = "Please input a valid Bill Amount";
+        error("Please input a valid Positive Amount");
         cashContainer.style.display='none';
         tableContainer.style.display='none';
     } 
