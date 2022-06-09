@@ -10,13 +10,13 @@ var notesAvailable = [2000,500,100,20,10,5,1]
 
 
 function checkBillInput () {
-    if (billInput.value > 0) {
+    if (billInput.value > 0 || cashInput.value > 0) {
         cashContainer.style.display='block';
         tableContainer.style.display='block';
         errorMessage.style.display='none';
     } else {
         errorMessage.style.display='block';
-        error("Please input a valid Bill Amount");
+        errorMessage.innerText = "Please input a valid Bill Amount";
         cashContainer.style.display='none';
         tableContainer.style.display='none';
     } 
@@ -28,7 +28,7 @@ function checkCashAmount () {
         tableContainer.style.display='block';
     } else {
         errorMessage.style.display='block';
-        error("Please input valid Cash Amount");
+        error("Please input valid Cash Amount. Cash Amount should be greater than Bill Amount.");
         tableContainer.style.display='none';
     }
 }
